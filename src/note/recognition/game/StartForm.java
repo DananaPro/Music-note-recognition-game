@@ -1,13 +1,23 @@
 package note.recognition.game;
 
+import java.io.File;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class StartForm extends javax.swing.JFrame {
 
+    private Clip backgroundClip;
+
     public StartForm() {
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+//        startBackgroundMusic("background music for note recogniaion game.wav");
+        ImageIcon logo = new ImageIcon("logo for pitch perfect.png");
+        this.setIconImage(logo.getImage());
+
     }
 
     private void DifficultyChossing() {
@@ -16,6 +26,23 @@ public class StartForm extends javax.swing.JFrame {
         ImageIcon logo = new ImageIcon("logo for pitch perfect.png");
         this.setIconImage(logo.getImage());
 
+    }
+
+    private void startBackgroundMusic(String filePath) {
+        try {
+            File musicPath = new File(filePath);
+            if (musicPath.exists()) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                backgroundClip = AudioSystem.getClip();
+                backgroundClip.open(audioInput);
+                backgroundClip.loop(Clip.LOOP_CONTINUOUSLY); // Loop continuously
+                backgroundClip.start();
+            } else {
+                System.out.println("File not found: " + filePath);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @SuppressWarnings("unchecked")

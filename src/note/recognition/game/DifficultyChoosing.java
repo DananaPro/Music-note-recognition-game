@@ -3,6 +3,10 @@ package note.recognition.game;
 import java.awt.BorderLayout;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.io.File;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -41,11 +45,24 @@ public class DifficultyChoosing extends javax.swing.JFrame {
         background.add(jButton1);
         background.add(jButton2);
         background.add(jButton3);
+
     }
 
     private void GameWindow() {
         GameWindow gm = new GameWindow();
         gm.setVisible(true);
+    }
+
+    private void playSound(String soundFile) {
+        try {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundFile).getAbsoluteFile());
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioInputStream);
+            clip.start();
+        } catch (Exception ex) {
+            System.out.println("Error with playing sound.");
+            ex.printStackTrace();
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -111,16 +128,21 @@ public class DifficultyChoosing extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        playSound("Swipe Swoosh Transition Sound Effect.wav");
         setVisible(false); // Hide the JFrame when jButton3 is clicked
         GameWindow();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        playSound("Swipe Swoosh Transition Sound Effect.wav");
+
         setVisible(false); // Hide the JFrame when jButton3 is clicked
         GameWindow();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        playSound("Swipe Swoosh Transition Sound Effect.wav");
+
         setVisible(false); // Hide the JFrame when jButton3 is clicked
         GameWindow();
     }//GEN-LAST:event_jButton3ActionPerformed
