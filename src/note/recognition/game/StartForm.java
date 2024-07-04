@@ -60,7 +60,7 @@ private void startBackgroundMusic(String filePath) {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Kalam", 1, 48)); // NOI18N
-        jLabel1.setText("welcume to the notes recognition game");
+        jLabel1.setText("welcome to the notes recognition game");
         getContentPane().add(jLabel1, java.awt.BorderLayout.PAGE_START);
 
         jButton1.setFont(new java.awt.Font("Kalam", 0, 36)); // NOI18N
