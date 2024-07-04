@@ -13,8 +13,10 @@ public class DifficultyChoosing extends javax.swing.JFrame {
     public DifficultyChoosing() {
         initComponents();  // Initialize components
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        ImageIcon logo = new ImageIcon("logo for pitch perfect.png");
         ImageIcon icon = new ImageIcon("Difficulty_selection_window.jpg");
-        this.setIconImage(icon.getImage());
+
+        this.setIconImage(logo.getImage());
         // Set transparent buttons
         jButton1.setOpaque(false);
         jButton1.setContentAreaFilled(false);
@@ -39,6 +41,11 @@ public class DifficultyChoosing extends javax.swing.JFrame {
         background.add(jButton1);
         background.add(jButton2);
         background.add(jButton3);
+    }
+
+    private void GameWindow() {
+        GameWindow gm = new GameWindow();
+        gm.setVisible(true);
     }
 
     @SuppressWarnings("unchecked")
@@ -105,14 +112,17 @@ public class DifficultyChoosing extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         setVisible(false); // Hide the JFrame when jButton3 is clicked
+        GameWindow();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         setVisible(false); // Hide the JFrame when jButton3 is clicked
+        GameWindow();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         setVisible(false); // Hide the JFrame when jButton3 is clicked
+        GameWindow();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

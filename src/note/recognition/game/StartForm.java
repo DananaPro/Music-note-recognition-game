@@ -1,5 +1,6 @@
 package note.recognition.game;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class StartForm extends javax.swing.JFrame {
@@ -8,10 +9,15 @@ public class StartForm extends javax.swing.JFrame {
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
+
     private void DifficultyChossing() {
         DifficultyChoosing df = new DifficultyChoosing();
         df.setVisible(true);
+        ImageIcon logo = new ImageIcon("logo for pitch perfect.png");
+        this.setIconImage(logo.getImage());
+
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -61,8 +67,8 @@ public class StartForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         setVisible(false);
-         DifficultyChossing();
+        setVisible(false);
+        DifficultyChossing();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {
