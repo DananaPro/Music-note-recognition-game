@@ -14,7 +14,7 @@ public class StartForm extends javax.swing.JFrame {
     public StartForm() {
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-//        startBackgroundMusic("background music for note recogniaion game.wav");
+        startBackgroundMusic("background music for note recogniaion game.wav");
         ImageIcon logo = new ImageIcon("logo for pitch perfect.png");
         this.setIconImage(logo.getImage());
 
@@ -28,22 +28,24 @@ public class StartForm extends javax.swing.JFrame {
 
     }
 
-    private void startBackgroundMusic(String filePath) {
-        try {
-            File musicPath = new File(filePath);
-            if (musicPath.exists()) {
-                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+private void startBackgroundMusic(String filePath) {
+    try {
+        File musicPath = new File(filePath);
+        if (musicPath.exists()) {
+            try (AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath)) {
                 backgroundClip = AudioSystem.getClip();
                 backgroundClip.open(audioInput);
                 backgroundClip.loop(Clip.LOOP_CONTINUOUSLY); // Loop continuously
                 backgroundClip.start();
-            } else {
-                System.out.println("File not found: " + filePath);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } else {
+            System.out.println("File not found: " + filePath);
         }
+    } catch (Exception e) {
+        e.printStackTrace();
     }
+}
+
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
