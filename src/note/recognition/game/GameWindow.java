@@ -7,7 +7,7 @@ import javax.swing.JLabel;
 
 public class GameWindow extends javax.swing.JFrame {
 
-    public GameWindow() {
+    public GameWindow(int difficulty) {
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
@@ -18,8 +18,13 @@ public class GameWindow extends javax.swing.JFrame {
         JLabel background = new JLabel(icon);
         background.setLayout(null); // Use null layout for absolute positioning
         this.setContentPane(background);
-// Assuming you have an array or list of JButtons
-        JButton[] buttons = {jButton1, jButton2, jButton3, jButton4, jButton5, jButton6, jButton7, jButton8, jButton9, jButton10, jButton11, jButton12};
+
+        // Assuming you have an array or list of JButtons
+        JButton[] buttons = {
+            jButton1, jButton2, jButton3, jButton4, jButton5, jButton6,
+            jButton7, jButton8, jButton9, jButton10, jButton11, jButton12,
+            jButton13, jButton15, jButton17, jButton16, jButton18, jButton19
+        };
 
         for (JButton button : buttons) {
             button.setOpaque(false);
@@ -27,11 +32,39 @@ public class GameWindow extends javax.swing.JFrame {
             button.setBorderPainted(false);
         }
 
-// Add buttons to the background container (assuming 'background' is a container)
+        // Add buttons to the background container (assuming 'background' is a container)
         for (JButton button : buttons) {
             background.add(button);
         }
 
+        if (difficulty == 1) {
+            setupEasyMode();
+        } else if (difficulty == 2) {
+            setupMediumMode();
+        } else if (difficulty == 3) {
+            setupHardMode();
+        } else {
+            throw new IllegalArgumentException("Unsupported difficulty level: " + difficulty);
+        }
+
+    }
+
+    private void setupEasyMode() {
+        // Example: Set up for easy mode
+        System.out.println("Setting up Easy Mode...");
+        // Adjust button labels, positions, or other game parameters for easy difficulty
+    }
+
+    private void setupMediumMode() {
+        // Example: Set up for medium mode
+        System.out.println("Setting up Medium Mode...");
+        // Adjust button labels, positions, or other game parameters for medium difficulty
+    }
+
+    private void setupHardMode() {
+        // Example: Set up for hard mode
+        System.out.println("Setting up Hard Mode...");
+        // Adjust button labels, positions, or other game parameters for hard difficulty
     }
 
     @SuppressWarnings("unchecked")
@@ -294,7 +327,7 @@ public class GameWindow extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         System.out.println("do");
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

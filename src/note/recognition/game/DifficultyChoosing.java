@@ -48,8 +48,8 @@ public class DifficultyChoosing extends javax.swing.JFrame {
 
     }
 
-    private void GameWindow() {
-        GameWindow gm = new GameWindow();
+    private void GameWindow(int difficulty) {
+        GameWindow gm = new GameWindow(difficulty);
         gm.setVisible(true);
     }
 
@@ -130,21 +130,26 @@ public class DifficultyChoosing extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         playSound("Swipe Swoosh Transition Sound Effect.wav");
         setVisible(false); // Hide the JFrame when jButton3 is clicked
-        GameWindow();
+        int Difficulty = 1;
+        
+        GameWindow(Difficulty);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         playSound("Swipe Swoosh Transition Sound Effect.wav");
-
         setVisible(false); // Hide the JFrame when jButton3 is clicked
-        GameWindow();
+        int Difficulty = 2;
+
+        GameWindow(Difficulty);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         playSound("Swipe Swoosh Transition Sound Effect.wav");
 
         setVisible(false); // Hide the JFrame when jButton3 is clicked
-        GameWindow();
+        int Difficulty = 3;
+
+        GameWindow(Difficulty);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
