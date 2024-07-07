@@ -41,7 +41,12 @@ public class GameWindow extends javax.swing.JFrame {
         soundseasy = new Sound[]{
             new Sound("do", "do_easy.wav", 1),
             new Sound("re", "re_easy.wav", 1),
-            new Sound("mi", "mi_easy.wav", 1)
+            new Sound("mi", "mi_easy.wav", 1),
+            new Sound("fa", "fa_easy.wav", 1),
+            new Sound("sol", "sol_easy.wav", 1),
+            new Sound("la", "la_easy.wav", 1),
+            new Sound("ca", "ci_easy.wav", 1)
+
         };
         soundmiddle = new Sound[]{
             new Sound("sol", "sol_middle.wav", 2),
@@ -103,6 +108,7 @@ public class GameWindow extends javax.swing.JFrame {
             if (selectedNote.equals(correctNote)) {
                 jLabel2.setText("Correct! You identified the note.");
                 jLabel2.setForeground(Color.GREEN);  // Set text color to green for correct answer
+                played = false;
             } else {
                 jLabel2.setText("Incorrect. Try again!");
                 jLabel2.setForeground(Color.RED);  // Set text color to red for incorrect answer
