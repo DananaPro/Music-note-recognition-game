@@ -103,19 +103,22 @@ public class GameWindow extends javax.swing.JFrame {
     }
 
     private void checkAnswer(String selectedNote) {
-        if (currentSound != null) {
-            String correctNote = currentSound.getName();
-            if (selectedNote.equals(correctNote)) {
-                jLabel2.setText("Correct! You identified the note.");
-                jLabel2.setForeground(Color.GREEN);  // Set text color to green for correct answer
-                played = false;
+        if (played) {
+            if (currentSound != null) {
+                String correctNote = currentSound.getName();
+                if (selectedNote.equals(correctNote)) {
+                    jLabel2.setText("Correct! You identified the note.");
+                    jLabel2.setForeground(Color.GREEN);  // Set text color to green for correct answer
+                    played = false;
+                } else {
+                    jLabel2.setText("Incorrect. Try again!");
+                    jLabel2.setForeground(Color.RED);  // Set text color to red for incorrect answer
+                }
             } else {
-                jLabel2.setText("Incorrect. Try again!");
-                jLabel2.setForeground(Color.RED);  // Set text color to red for incorrect answer
+                System.err.println("No sound selected.");
             }
-        } else {
-            System.err.println("No sound selected.");
         }
+
     }
 
     @SuppressWarnings("unchecked")
