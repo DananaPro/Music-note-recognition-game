@@ -130,7 +130,7 @@ public class DifficultyChoosing extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         playSound("Swipe Swoosh Transition Sound Effect.wav");
         setVisible(false); // Hide the JFrame when jButton3 is clicked
-        int Difficulty = 1;
+        int Difficulty = 3;
         
         GameWindow(Difficulty);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -147,7 +147,7 @@ public class DifficultyChoosing extends javax.swing.JFrame {
         playSound("Swipe Swoosh Transition Sound Effect.wav");
 
         setVisible(false); // Hide the JFrame when jButton3 is clicked
-        int Difficulty = 3;
+        int Difficulty = 1;
 
         GameWindow(Difficulty);
     }//GEN-LAST:event_jButton3ActionPerformed
